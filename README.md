@@ -1,4 +1,4 @@
-# Hikvsion intercom to MQTT bridge.
+# Hikvision intercom to MQTT bridge.
 
 This will connect to your intercom and send events to mqtt.
 
