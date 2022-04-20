@@ -1,8 +1,10 @@
-# hikvision-intercom-python-demo
-Hikvsion intercom Python demo
+# Hikvsion intercom to MQTT bridge.
 
-Usage:
-  - Install Hikvision Device Network SDK
-  - Change hcnetsdk_path in hcnetsdk.py
-  - Change NET_DVR_Login_V30 parameters in hik.py
+This will connect to your intercom and send events to mqtt.
+
+Edit config.py and see what happens. :)
+
+
+Based off the excellent example from: https://github.com/laszlojakab/hikvision-intercom-python-demo
+
 
