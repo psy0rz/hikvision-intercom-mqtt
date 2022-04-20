@@ -18,7 +18,7 @@ It send events when someone is ringing, where there is motion, or when the unloc
 
 ## Other info
 
-TODO: all opening door via mqtt as well. (i dont need it myself yet)
+TODO: add opening door via mqtt as well. (i dont need it myself yet)
 
 Based off the excellent example from: https://github.com/laszlojakab/hikvision-intercom-python-demo
 
