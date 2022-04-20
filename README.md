@@ -11,7 +11,12 @@ Probably works with all Hikvision video intercoms, like:
 
 Since it uses the official SDK it doesnt require custom firmware or other special things.
 
-Edit config.py and see what happens. :)
+Edit config.py and run hik.py and see what happens. :)
+
+It send events when someone is ringing, where there is motion, or when the unlock-button is pressed via the app. (and a few others like tamper alarm)
+
+
+## Other info
 
 TODO: all opening door via mqtt as well. (i dont need it myself yet)
 
