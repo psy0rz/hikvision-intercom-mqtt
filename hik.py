@@ -1,3 +1,5 @@
+
+
 from hcnetsdk import HCNetSDK, NET_DVR_DEVICEINFO_V30, NET_DVR_DEVICEINFO_V30, NET_DVR_SETUPALARM_PARAM, \
     fMessageCallBack, COMM_ALARM_V30, COMM_ALARM_VIDEO_INTERCOM, NET_DVR_VIDEO_INTERCOM_ALARM, NET_DVR_ALARMINFO_V30, \
     ALARMINFO_V30_ALARMTYPE_MOTION_DETECTION, VIDEO_INTERCOM_ALARM_ALARMTYPE_DOORBELL_RINGING, \
@@ -57,12 +59,12 @@ def callback(command: int, alarmer_pointer, alarminfo_pointer, buffer_length, us
     else:
         print(f"Unhandled command: {command}")
 
+print("Connecting camera...")
 
 HCNetSDK.NET_DVR_Init()
 HCNetSDK.NET_DVR_SetValidIP(0, True)
 
 # device_info = NET_DVR_DEVICEINFO_V30()
-
 user_id = HCNetSDK.NET_DVR_Login_V30(config.intercom_host.encode('utf-8'), 8000, config.intercom_user.encode('utf-8'),
                                      config.intercom_pass.encode('utf-8'))
 
@@ -71,6 +73,8 @@ if (user_id < 0):
         f"NET_DVR_Login_V30 failed, error code = {HCNetSDK.NET_DVR_GetLastError()}")
     HCNetSDK.NET_DVR_Cleanup()
     exit(1)
+
+print ("Connected!")
 
 alarm_param = NET_DVR_SETUPALARM_PARAM()
 alarm_param.dwSize = 20
@@ -104,6 +108,7 @@ def on_message(client, userdata, msg):
     print(msg.topic + " " + str(msg.payload))
 
 
+print("Connecting mqtt...")
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
@@ -112,6 +117,7 @@ if (config.mqtt_user != ""):
 client.connect(config.mqtt_host, 1883, 60)
 
 client.loop_forever()
+print("Done")
 
 # never called anyway..
 # HCNetSDK.NET_DVR_CloseAlarmChan_V30(alarm_handle)

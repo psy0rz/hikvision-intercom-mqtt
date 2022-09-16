@@ -1,0 +1,4 @@
+services:
+  hikvisionmqtt:
+    build: .
+    
