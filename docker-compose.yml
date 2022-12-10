@@ -1,4 +1,17 @@
+
+
 services:
+
   hikvisionmqtt:
     build: .
+    environment:
+      - intercom_host=192.168.13.123
+      - intercom_user=admin
+      - intercom_pass=xxx
+
+      - mqtt_host=192.168.13.10
+      - mqtt_user=
+      - mqtt_pass=
+      - mqtt_topic=intercom1
+
     

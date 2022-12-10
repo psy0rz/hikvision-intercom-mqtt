@@ -59,7 +59,7 @@ def callback(command: int, alarmer_pointer, alarminfo_pointer, buffer_length, us
     else:
         print(f"Unhandled command: {command}")
 
-print("Connecting camera...")
+print("Connecting camera {} {}".format(config.intercom_host, config.intercom_pass))
 
 HCNetSDK.NET_DVR_Init()
 HCNetSDK.NET_DVR_SetValidIP(0, True)

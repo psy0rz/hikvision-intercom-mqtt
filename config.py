@@ -1,8 +1,10 @@
-intercom_host="192.168.13.143"
-intercom_user="admin"
-intercom_pass="xxxx"
+import os
 
-mqtt_host="mqtt"
-mqtt_user=""
-mqtt_pass=""
-mqtt_topic="intercom1"
+intercom_host=os.environ['intercom_host']
+intercom_user=os.environ['intercom_user']
+intercom_pass=os.environ['intercom_pass']
+
+mqtt_host=os.environ['mqtt_host']
+mqtt_user=os.environ['mqtt_user']
+mqtt_pass=os.environ['mqtt_pass']
+mqtt_topic=os.environ['mqtt_topic']

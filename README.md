@@ -17,7 +17,10 @@ It send events when someone is ringing, where there is motion, or when the unloc
 
 # Install
 
-Edit config.py and run docker-compose up :)
+Edit docker-compose.yml and use:
+```shell
+docker-compose up
+```
 
 
 ## Other info
