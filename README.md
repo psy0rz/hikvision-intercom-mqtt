@@ -15,6 +15,8 @@ Edit config.py and run hik.py and see what happens. :)
 
 It send events when someone is ringing, where there is motion, or when the unlock-button is pressed via the app. (and a few others like tamper alarm)
 
+**NOTE: hikvision actually queues the events, so the first time you will get a whole list of events, in a slow manner. just wait until its done**
+
 # Install
 
 Edit docker-compose.yml and use:
